@@ -9,7 +9,7 @@
         <title>Dashboard</title>
     </head>
     <body>
-        <div id="wrapper">
+        <div id="wrapper" class="toggled-2">
             <header>
                 <!-- navbar-header : Start-->
                 <div class="cointainer-fluid">
@@ -33,27 +33,32 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="dropdown me-3">
-                            <a class=" dropdown-toggle d-flex align-items-center" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+
+                        <div class="dropdown me-4">
+                            <a class=" dropdown-toggle d-flex align-items-center text-decoration-none text-dark pe-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?php if($user_data['profile_pic'] != ''):?>
                                 
                                 <img class="avtar-pics" src=' <?php echo getenv('ImageURL').'public/profile_pic/'.$user_data['profile_pic']; ?>' height="60">
                                 <?php else: ?>
                                 <img class="avtar-pics" src='<?php echo getenv('ImageURL') ?>public/profile_pic/user_profile.png' height="60">
                                 <?php endif;?>
+                                <span class="mx-1 fs-14px m-w-100px text-truncate"><?php echo ucfirst($user_data['name']);?></span>
                             </a>
+                            
+                            
                             <ul class="dropdown-menu dropdown-menu-end mt-2" aria-labelledby="dropdownMenuButton1">
+                                <li>
+                                    
+                                    <a class="dropdown-item" href="<?php echo base_url(); ?>/edit_profile">
+                                        Profile
+                                    </a>
+                                </li>
                                 <li>
                                     <a class="dropdown-item" href="<?php echo base_url(); ?>/change_password">
                                         Change Password
                                     </a>
                                 </li>
-                                <li>
-                                    
-                                    <a class="dropdown-item" href="<?php echo base_url(); ?>/edit_profile">
-                                        Edit Profile
-                                    </a>
-                                </li>
+                                
                                 <li>
                                     
                                     <a class="dropdown-item" href="<?php echo base_url(); ?>/signout" method="post">

@@ -24,7 +24,7 @@ class ProfileController extends BaseController
         $data = [];
         $user_id=$session->get('id');
         if($user_id){
-            $data['user_name'] = $session->get('name');
+            //$data['user_name'] = $session->get('name');
             $user_data = $userModel->where(array('id'=>$user_id,'is_deleted'=>0))->find();
             $data['user_data'] = $user_data[0];
         }
@@ -61,7 +61,7 @@ class ProfileController extends BaseController
                 'opwd'=>[
                     'rules'=>'required',
                     'errors'=>[
-                        'required' => 'Old password field is required',
+                        'required' => 'Current password field is required',
                     ],
                 ],
                 'npwd'=>[
@@ -76,7 +76,7 @@ class ProfileController extends BaseController
                     'rules'=>'required|matches[npwd]',
                     'errors'=>[
                         'required' => 'Confirm password field is required',
-                        'matches'=>'Confirm password does not matches with new password.'
+                        'matches'=>'Confirm password does not matche with new password.'
                     ],
                 ],
                
@@ -163,7 +163,7 @@ class ProfileController extends BaseController
                     ],
                 ],
                 'contact_number'=>[
-                    'rules'=>'required|min_length[10]|max_length[16]',
+                    'rules'=>'required|min_length[10]|max_length[30]',
                     'errors'=>[
                         'required' => 'Contact number field is required',
                         'min_length'=> 'The Contact number field must be at least 10 characters in length.',
@@ -323,7 +323,7 @@ class ProfileController extends BaseController
                         $user_name=$check_email[0]['name'];
                         $data1=array();
                         $data1['user_name']=$user_name;
-                        
+                        $data1['token']=$token;
                         $message = view('/Email-template/reset_password_html', $data1);
                       
 

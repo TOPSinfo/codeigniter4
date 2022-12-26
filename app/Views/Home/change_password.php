@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label>Confirm Password <span class="text-danger">*</span></label>
-                        <input type="password" name="cpwd" placeholder="Retype New Password"  class="form-control" >
+                        <input type="password" name="cpwd" placeholder="Confirm Password"  class="form-control" >
                         <!-- Error -->
                         <?php if(isset($validation) && $validation->getError('cpwd')) {?>
                             <div class='alert alert-danger mt-2'>
@@ -43,7 +43,8 @@
                     
                     <div class="d-grid">
                         <!--  <button type="submit" class="btn btn-success">Change Password</button> -->
-                        <input type="submit" value="Change Password" class="btn btn-primary">
+                        <input type="submit" value="Submit" class="btn btn-success">
+                       <!--  <button type="button" class="btn btn-primary">Cancel</button> -->
                     </div>     
                 </form>
             </div>

@@ -22,7 +22,7 @@
                     </div>
                     <div class="form-group mb-4">
                         <label>Contact number <span class="text-danger">*</span></label>
-                        <input id="contact_number" type="tel" name="contact_number" placeholder="Contact Number"  class="form-control" value="<?= $user_data['contact_no']; ?>" >
+                        <input id="contact_number" type="tel" name="contact_number" placeholder="Contact Number"  class="form-control" value="<?= $user_data['contact_no']; ?>" maxlength="26">
                         <!-- Error -->
                         <?php if(isset($validation) && $validation->getError('contact_number')) {?>
                             <div class='alert alert-danger mt-2'>
@@ -71,39 +71,67 @@
               
         </div>
     </div>
-  <script>
-   // pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$"
-   let telEl = document.querySelector('#contact_number')
-
-telEl.addEventListener('keyup', (e) => {
-  let val = e.target.value;
- /* e.target.value = val
-    .replace(/\D/g, '')
-    .replace(/(\d{1,4})(\d{1,3})?(\d{1,3})?/g, function(txt, f, s, t) {
-      if (t) {
-        return `(${f}) ${s}-${t}`
-      } else if (s) {
-        return `(${f}) ${s}`
-      } else if (f) {
-        return `(${f})`
-      }
-    });*/
-   /* phone = val.replace(/\D/g, '');
-const match = phone.match(/^(\d{1,3})(\d{0,3})(\d{0,4})(\d{0,4})$/);
-if (match) {
-    //phone = `(${match[1]}${match[2] ? ') ' : ''}${match[2]}${match[3] ? '-' : ''}${match[3]}${match[4] ? ' x' : ''}${match[4]}`;
-     phone = `(${match[1]}${match[2] ? ') ' : ''}${match[2]}${match[3] ? '-' : ''}${match[3]}${match[4] ? ' x' : ''}${match[4]}`;
-}
-e.target.value = phone*/
-
-phone = val.replace(/[^\d]/g, "");
-
-    //check if number length equals to 10
-    if (phone.length == 10) {
-        //reformat and return phone number
-        e.target.value = phone.replace(/(\d{3})(\d{3})(\d{4})/, "($1) $2-$3");
-    }
-
-})
- </script>
+  
 <?php echo view('/includes/Footer');  ?>
+<script type="text/javascript">
+    $('#contact_number')
+
+    .keydown(function (e) {
+        var key = e.which || e.charCode || e.keyCode || 0;
+        $phone = $(this);
+
+    // Don't let them remove the starting '('
+    if ($phone.val().length === 1 && (key === 8 || key === 46)) {
+            $phone.val('('); 
+      return false;
+        } 
+    // Reset if they highlight and type over first char.
+    else if ($phone.val().charAt(0) !== '(') {
+            $phone.val('('+String.fromCharCode(e.keyCode)+''); 
+        }
+
+        // Auto-format- do not expose the mask as the user begins to type
+        if (key !== 8 && key !== 9) {
+            if ($phone.val().length === 4) {
+                $phone.val($phone.val() + ')');
+            }
+            if ($phone.val().length === 5) {
+                $phone.val($phone.val() + ' ');
+            }           
+            if ($phone.val().length === 9) {
+                $phone.val($phone.val() + '-');
+            }
+      if ($phone.val().length === 14) {
+                $phone.val($phone.val() + ' ext. ');
+            }
+      
+        }
+
+        // Allow numeric (and tab, backspace, delete) keys only
+        return (key == 8 || 
+                key == 9 ||
+                key == 46 ||
+                (key >= 48 && key <= 57) ||
+                (key >= 96 && key <= 105)); 
+    })
+    
+    .bind('focus click', function () {
+        $phone = $(this);
+        
+        if ($phone.val().length === 0) {
+            $phone.val('(');
+        }
+        else {
+            var val = $phone.val();
+            $phone.val('').val(val); // Ensure cursor remains at the end
+        }
+    })
+    
+    .blur(function () {
+        $phone = $(this);
+        
+        if ($phone.val() === '(') {
+            $phone.val('');
+        }
+    });
+</script>

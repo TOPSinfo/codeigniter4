@@ -135,7 +135,7 @@ class AdminController extends ResourceController
                     ],
                 ], 
                 'contact_no'=>[
-                    'rules'=>'required|min_length[10]|max_length[16]',
+                    'rules'=>'required|min_length[10]|max_length[30]',
                     'errors'=>[
                         'required' => 'Contact number field is required',
                         'min_length'=> 'The Contact number field must be at least 10 characters in length.',
@@ -176,6 +176,12 @@ class AdminController extends ResourceController
                         'is_unique'=>'Email is already exists.'
                     ],
                 ],
+                /*'domains[]'=>[
+                    'rules'=>'valid_url',
+                    'errors'=>[
+                        'valid_url' => 'Valid domain required',
+                     ],
+                ]*/
                
             
            
@@ -360,6 +366,8 @@ class AdminController extends ResourceController
 
             $data['user_name'] = $session->get('name');
             $edit_user_data = $userModel->where(array('id'=>$id,'is_deleted'=>0))->find();
+           // echo $userModel->getLastQuery()->getQuery();die();
+
             $data['edit_user_data'] = $edit_user_data[0];
         }
 
@@ -383,7 +391,7 @@ class AdminController extends ResourceController
                     ],
                 ],
                 'contact_no'=>[
-                    'rules'=>'required|min_length[10]|max_length[16]',
+                    'rules'=>'required|min_length[10]|max_length[30]',
                     'errors'=>[
                         'required' => 'Contact number field is required',
                         'min_length'=> 'The Contact number field must be at least 10 characters in length.',
@@ -420,7 +428,7 @@ class AdminController extends ResourceController
                 $contact_no= $this->request->getVar('contact_no');
                 $profile_pic=$user_data[0]['profile_pic'];
 
-                //$username=$this->request->getVar('username');
+                $username=$this->request->getVar('username');
                 $company=$this->request->getVar('company');
                 $billing_term=$this->request->getVar('billing_term');
                 $role=$this->request->getVar('role');
@@ -460,6 +468,7 @@ class AdminController extends ResourceController
                         'billing_term'=>$billing_term,
                         'role'=>$role,
                         'email'=>$email_check,
+                        'username'=>$username,
                         'updated_at'=>date('Y-m-d H:i:s')
                     ];
                     $res=$userModel->update($id,$data);

@@ -64,15 +64,17 @@
      </form>
      </div>
 
+      <div id="show_total_records" style="display: none;">
        <label id="cnt_selected">0 Record(s) Selected</label>|
        <a class="text_color_red text_size add_email_address" onclick="remove_selection();" title="Remove Selected" href="javascript:void(0);">Remove Selection</a>
 
        <select name="multiple_action" id="multiple_action" >
-  <option value="">Select</option>
-  <!-- <option value="delete">Delete</option> -->
-  <option value="active">Active</option>
-  <option value="inactive">Inactive</option>
-</select>
+        <option value="">Select</option>
+        <!-- <option value="delete">Delete</option> -->
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+    </div>
 
      <div class="col text-end">   
      <form method='get' action="<?php echo base_url(); ?>/create_user" id="searchForm">
@@ -292,7 +294,7 @@
                     popupcontactlist[arraydatacount++] = parseInt(this.value);
                 }  
             });
-
+            $("#show_total_records").show();
        } else{
             $('.mycheckbox').each(function() { //loop through each checkbox
 
@@ -305,6 +307,7 @@
                     arraydatacount--;
                 }
             });
+            $("#show_total_records").hide();
        }
        $("#cnt_selected").text(popupcontactlist.length + " Record(s) Selected");
     });
@@ -332,7 +335,13 @@
             arraydatacount--;
           }
         }
+        if(popupcontactlist.length>=1){
+          $("#show_total_records").show();
+        }else{
+          $("#show_total_records").hide();
+        }
         $("#cnt_selected").text(popupcontactlist.length + " Record(s) Selected");
+
 
     });
 
@@ -347,7 +356,7 @@
         popupcontactlist = Array();
         $("#cnt_selected").text("0 Record(s) Selected");
         arraydatacount = 0;
-
+        $("#show_total_records").hide();
     }
     </script>
 

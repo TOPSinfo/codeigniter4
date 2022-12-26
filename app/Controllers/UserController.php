@@ -132,7 +132,7 @@ class UserController extends BaseController
                     ],
                 ],
                 'contact_no'=>[
-                    'rules'=>'required|min_length[10]|max_length[16]',
+                    'rules'=>'required|min_length[10]|max_length[30]',
                     'errors'=>[
                         'required' => 'Contact number field is required',
                         'min_length'=> 'The Contact number field must be at least 10 characters in length.',
@@ -356,7 +356,7 @@ class UserController extends BaseController
                     ],
                 ],
                 'contact_no'=>[
-                    'rules'=>'required|min_length[10]|max_length[16]',
+                    'rules'=>'required|min_length[10]|max_length[30]',
                     'errors'=>[
                         'required' => 'Contact number field is required',
                         'min_length'=> 'The Contact number field must be at least 10 characters in length.',
@@ -393,8 +393,8 @@ class UserController extends BaseController
                 $name = $this->request->getVar('name');
                 $contact_no= $this->request->getVar('contact_no');
                 $profile_pic=$user_data[0]['profile_pic'];
-                 $email_check=$this->request->getVar('email');
-
+                $email_check=$this->request->getVar('email');
+                $username=$this->request->getVar('username');
             
 
             
@@ -425,6 +425,7 @@ class UserController extends BaseController
                         'profile_pic'=>$profile_pic,
                         'updated_at'=>date('Y-m-d H:i:s'),
                         'email'=>$email_check,
+                        'username'=>$username,
                     ];
                     $res=$userModel->update($id,$data);
                     

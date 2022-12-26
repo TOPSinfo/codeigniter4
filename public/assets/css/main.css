@@ -42,12 +42,36 @@ a {
     text-decoration: none;
 }
 
+/*font-size*/
+.fs-14px {
+    font-size: 14px;
+}
+
+/*width*/
+.m-w-100px {
+    max-width: 100px;
+}
+.w-100px {
+    width: 100px !important;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
 .wrap {
     width: 100%;
     border-radius: 5px;
     -webkit-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
     -moz-box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
     box-shadow: 0px 10px 34px -15px rgba(0, 0, 0, 0.24);
+}
+.pt-1px {
+    padding-top: 1px !important;
+}
+
+.pb-1px {
+    padding-bottom: 1px !important;
 }
 
 .text-wrap,
@@ -498,6 +522,7 @@ button.submit {
    }
    #wrapper.toggled-2 #sidebar-wrapper {
       width: 58px;
+      overflow: hidden;
    }
    #wrapper.toggled-2 #sidebar-wrapper:hover {
       width: 250px;
@@ -666,9 +691,21 @@ button.submit {
 .flex-1 {
     flex: 1;
 }
+.cursor-pointer {
+    cursor: pointer;
+}
 
-.toggled-2 .fa-bars:before {
+
+
+#wrapper.toggled-2 .fa-bars:before {
+    content: "\f0c9";
+}
+#wrapper .fa-bars:before {
     content: "\f00d";
+}
+
+.fs-13px {
+    font-size: 13px;
 }
 
 .fs-14px {

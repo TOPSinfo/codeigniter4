@@ -37,7 +37,7 @@
                                                 <button type="submit" class="form-control btn btn-primary submit px-3">Submit</button>
                                             </div>
                                              <div class=" text-md-right text-end mt-2">
-                                                    <a href="<?php echo base_url(); ?> " >Back to Login </a>
+                                                    <a href="<?php echo base_url(); ?> " >Back to SignIn </a>
                                                 </div>
                                         </form>
                                     </div>

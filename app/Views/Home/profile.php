@@ -3,9 +3,9 @@
     <div class="container-fluid p-4">
 
    <h2>Dashboard</h2>
-        <?php if($user_name):?>
+        <?php if( $user_data['name']):?>
         <div class="alert alert-success">
-            Hello <?= $user_name; ?>,
+            Hello <?= $user_data['name']; ?>,
             Welcome to Training Layer
         </div>
         <?php endif;
