@@ -1,4 +1,4 @@
-# Training Layer App
+# Codeigniter 4 Basic admin panel 
 
 This project is for Codeigniter 4 setup with admin panel
 
