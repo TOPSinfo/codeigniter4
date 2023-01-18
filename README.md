@@ -22,4 +22,4 @@ Please check the official Codeigniter installation guide for server requirements
 
 7. Run `php spark serve`
 
-Now we can see the development server started at http:localhost:8080
+Now we can see the development server started at http://localhost:8080
