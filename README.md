@@ -10,14 +10,14 @@ Please check the official Codeigniter installation guide for server requirements
 
 2. ### `cd project`
 
-3. Install all the dependencies using composer ### `composer install`
+3. Install all the dependencies using composer `composer install`
 
 4. Setup .env file using **env** according your environment
 
-5. Run the migration and seed data ### `php spark migrate`
+5. Run the migration and seed data `php spark migrate`
 
-6. Run the seed data ### `php spark db:seed`
+6. Run the seed data `php spark db:seed`
 
-7. Run ### `php spark serve`
+7. Run `php spark serve`
 
 Now we can see the development server started at http:localhost:8000/
