@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="<?php echo getenv('ImageURL');?>public/assets/css/main.css" rel="stylesheet">
+        <link href="<?php echo getenv('ImageURL');?>assets/css/main.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Dashboard</title>
     </head>
@@ -22,7 +22,7 @@
                             </button>
                         </div>
                              <div class="logo-sidebar logo-mobile">
-                    <img src="<?php echo getenv('ImageURL');?>public/assets/images/logo-app.png" class="admin-full-logo">
+                    <img src="<?php echo getenv('ImageURL');?>assets/images/logo-app.png" class="admin-full-logo">
                 </div>
                         
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -38,9 +38,9 @@
                             <a class=" dropdown-toggle d-flex align-items-center text-decoration-none text-dark pe-2" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                 <?php if($user_data['profile_pic'] != ''):?>
                                 
-                                <img class="avtar-pics" src=' <?php echo getenv('ImageURL').'public/profile_pic/'.$user_data['profile_pic']; ?>' height="60">
+                                <img class="avtar-pics" src=' <?php echo getenv('ImageURL').'profile_pic/'.$user_data['profile_pic']; ?>' height="60">
                                 <?php else: ?>
-                                <img class="avtar-pics" src='<?php echo getenv('ImageURL') ?>public/profile_pic/user_profile.png' height="60">
+                                <img class="avtar-pics" src='<?php echo getenv('ImageURL') ?>profile_pic/user_profile.png' height="60">
                                 <?php endif;?>
                                 <span class="mx-1 fs-14px m-w-100px text-truncate"><?php echo ucfirst($user_data['name']);?></span>
                             </a>
@@ -77,7 +77,7 @@
 
             <div id="sidebar-wrapper" class="sidebar-wrapper">
                 <div class="logo-sidebar">
-                    <img src="<?php echo getenv('ImageURL');?>public/assets/images/logo-app.png" class="admin-full-logo">
+                    <img src="<?php echo getenv('ImageURL');?>assets/images/logo-app.png" class="admin-full-logo">
                 </div>
                 <div class="flex-1 oveflow-auto">
                     <ul class="sidebar-nav nav-pills nav-stacked" id="menu">
