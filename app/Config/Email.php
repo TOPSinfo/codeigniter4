@@ -56,16 +56,14 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPUser='monika@topsinfosolutions.com';
-    //public $SMTPUser='priyankap@topsinfosolutions.com';
+    public $SMTPUser='<USER EMAIL>';
 
     /**
      * SMTP Password
      *
      * @var string
      */
-    public $SMTPPass='Monika@@24';
-    //public $SMTPPass='Siya@123';
+    public $SMTPPass='<PASSWORD>';
 
     /**
      * SMTP Port
