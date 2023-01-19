@@ -485,7 +485,7 @@ button.submit {
 }
 
 .toggled-2 .logo-sidebar {
-    padding-left: 14px;
+    padding-left: 20px;
 }
 
 .alert-danger {
@@ -623,7 +623,7 @@ button.submit {
 
 /* Header section */
 .logo-sidebar {
-    height: 46px;
+    height: 48px;
     background: #f6f6f6;
     display: flex;
     align-items: center;

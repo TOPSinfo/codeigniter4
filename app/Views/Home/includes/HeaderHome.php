@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
         
-        <title>Training Layer Login</title>
+        <title>Admin panel Login</title>
     </head>
     <body>
         <div class="container">
@@ -18,7 +18,7 @@
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-md-6 text-center mt-4 mb-4">
-                                <h2 class="heading-section"><img src="<?php echo getenv('ImageURL');?>assets/images/logo-app.png"></h2>
+                                <h2 class="heading-section"><img src="<?php echo getenv('ImageURL');?>assets/images/logo.jpeg"></h2>
                                
                             </div>
                         </div>

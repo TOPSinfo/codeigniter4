@@ -22,7 +22,7 @@
                             </button>
                         </div>
                              <div class="logo-sidebar logo-mobile">
-                    <img src="<?php echo getenv('ImageURL');?>assets/images/logo-app.png" class="admin-full-logo">
+                    <img src="<?php echo getenv('ImageURL');?>assets/images/logo.jpeg" class="admin-full-logo">
                 </div>
                         
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -77,7 +77,7 @@
 
             <div id="sidebar-wrapper" class="sidebar-wrapper">
                 <div class="logo-sidebar">
-                    <img src="<?php echo getenv('ImageURL');?>assets/images/logo-app.png" class="admin-full-logo">
+                    <img src="<?php echo getenv('ImageURL');?>assets/images/logo.jpeg" class="admin-full-logo">
                 </div>
                 <div class="flex-1 oveflow-auto">
                     <ul class="sidebar-nav nav-pills nav-stacked" id="menu">

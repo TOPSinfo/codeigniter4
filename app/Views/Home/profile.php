@@ -6,7 +6,7 @@
         <?php if( $user_data['name']):?>
         <div class="alert alert-success">
             Hello <?= $user_data['name']; ?>,
-            Welcome to Training Layer
+            Welcome to Admin Panel
         </div>
         <?php endif;
         ?>

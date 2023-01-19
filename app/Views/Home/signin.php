@@ -6,7 +6,7 @@
                                     <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last auth-sidebar">
                                         <div class="text w-100">
                                             <h2>Welcome to</h2>
-                                            <h4>Training Layer</h4>
+                                            <h4>Admin Panel</h4>
                                         </div>
                                     </div>
                                     <div class="login-wrap p-4 p-lg-5">
